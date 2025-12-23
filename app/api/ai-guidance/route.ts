@@ -4,9 +4,11 @@ import { createGroq } from "@ai-sdk/groq"
 import { generateText } from "ai"
 
 const groq = createGroq({
-  apiKey: process.env.GROQ_API_KEY!,
+  apiKey: process.env.GROQ_API_KEY,
 })
-
+console.log("GROQ_API_KEY:", process.env.GROQ_API_KEY ? "Loaded" : "Not Loaded")
+console.log("GROQ Instance:", groq ? "Created" : "Not Created")
+console.log(process.env.GROQ_API_KEY);
 export async function POST(request: NextRequest) {
   try {
     const { question, topic } = await request.json()
@@ -33,7 +35,7 @@ Please provide:
 Keep your response professional, encouraging, and practical. Focus on providing value that can help advance their career.`
 
     const { text } = await generateText({
-      model: groq("meta-llama/llama-4-scout-17b-16e-instruct"),
+      model: groq("openai/gpt-oss-120b"),
       prompt,
       // maxTokens: 1000,
     })
