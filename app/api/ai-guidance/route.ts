@@ -7,7 +7,7 @@ const groq = createGroq({
   apiKey: process.env.GROQ_API_KEY,
 })
 console.log("GROQ_API_KEY:", process.env.GROQ_API_KEY ? "Loaded" : "Not Loaded")
-console.log("GROQ Instance:", groq ? "Created" : "Not Created")
+// console.log("GROQ Instance:", groq ? "Created" : "Not Created")
 console.log(process.env.GROQ_API_KEY);
 export async function POST(request: NextRequest) {
   try {
