@@ -10,7 +10,7 @@ import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
 import { Sparkles, MessageCircle, Clock, User, Bot } from "lucide-react"
 import { useAuth } from "@/hooks/use-auth"
-import marked from 'marked';
+import {marked} from 'marked';
 
 
 interface GuidanceSession {
